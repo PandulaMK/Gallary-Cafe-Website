@@ -1,0 +1,582 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: none;
+}
+
+.logo img {
+    width: 100px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+.nav-links a:hover,
+.nav-links .btn:hover {
+    background-color: crimson;
+    color: white;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: crimson;
+    color: white;
+}
+
+.section {
+    min-height: 100vh;
+    padding: 60px 20px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.section::before {
+    content: "";
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.section > * {
+    position: relative;
+    z-index: 2;
+}
+
+.overlay .btn,
+form button,
+.menu-buttons button {
+    background-color: crimson;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.overlay .btn:hover,
+form button:hover,
+.menu-buttons button:hover {
+    background-color: darkred;
+}
+
+.section h2 {
+    font-size: 36px;
+    color: crimson;
+    margin-bottom: 20px;
+}
+
+.section p {
+    font-size: 18px;
+}
+
+.image-boxes,
+.promo-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.image-boxes .box,
+.promo-boxes .box {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.image-boxes .box:hover,
+.promo-boxes .box:hover {
+    transform: scale(1.1);
+}
+
+.image-boxes .box img,
+.promo-boxes .box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form select,
+form input[type="text"],
+form input[type="number"],
+form input[type="date"],
+form button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: crimson;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: darkred;
+}
+
+#bookingDetails {
+    margin-top: 20px;
+}
+
+.hidden-slideshow {
+    display: none;
+}
+
+.menu-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.menu-buttons .meal-btn,
+.menu-buttons .special-btn {
+    background-color: crimson;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+/* Styles for the Meals and Special Food & Beverages buttons */
+button#meals, button#sfb {
+    background-color: crimson;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button#meals:hover, button#sfb:hover {
+    background-color: darkred;
+    transform: scale(1.05);
+}
+
+
+.menu-buttons .meal-btn:hover,
+.menu-buttons .special-btn:hover {
+    background-color: darkred;
+}
+
+footer {
+    background-color: #333; /* Adjust background color as needed */
+    padding: 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto;
+}
+
+.footer-left {
+    flex: 1;
+}
+
+.footer-right {
+    flex: 1;
+    text-align: right;
+}
+
+.footer-right p {
+    margin: 0;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #ffffff; /* Adjust icon color */
+}
+
+.all-rights {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ffffff; /* Adjust text color */
+}
+
+.footer-right {
+    color: #ffffff;
+}
+
+/* Ensure the home section takes the full viewport height */
+.section.home {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Style for the video to cover the entire section */
+.backvideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Ensure the video stays in the background */
+}
+
+/* Style for the overlay to add the desired overlay effect */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust the overlay color and opacity as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ensure the logo is properly positioned */
+.logo {
+    position: relative;
+    z-index: 1; /* Ensure the logo appears above the video */
+}
+
+
+@media (min-aspect-ratio: 16/9){
+    .backvideo{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9){
+    .backvideo{
+        width: auto;
+        height:100%;}
+}
+/* Specific section backgrounds */
+/* .home {
+    background-image: url('../images/home-bg.jpeg');
+} */
+
+.menu {
+    background-image: url('../images/menu-bg.jpg');
+}
+
+.search-meal {
+    background-image: url('../images/search-meal-bg.jpg');
+}
+
+.about {
+    background-image: url('../images/about-bg.jpg');
+}
+
+.events {
+    background-image: url('../images/events-bg.jpg');
+}
+
+.promotions {
+    background-image: url('../images/promotions-bg.png');
+}
+
+.reservations {
+    background-image: url('../images/reservations-bg.jpg');
+}
+
+.pre-order {
+    background-image: url('../images/pre-order-bg.png');
+}
+.parking-reservation{
+    background-image: url('../images/parking-reservations-bg.jpg');
+}
+
+
+.reservation-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.left-side, .right-side {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    width: calc(50% - 40px);
+}
+
+.left-side table, .right-side table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.table-btn {
+    background-color: crimson;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.table-btn:hover {
+    background-color: darkred;
+    transform: scale(1.1);
+}
+
+.left-side input[type="date"], 
+.left-side select[name="guest_number"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#preOrderForm {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: calc(50% - 40px);
+    margin: 20px auto;
+}
+
+#preOrderForm input[type="text"], 
+#preOrderForm input[type="number"], 
+#preOrderForm select[name="status"], 
+#preOrderForm button {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#preOrderForm button {
+    background-color: crimson;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#preOrderForm button:hover {
+    background-color: darkred;
+}
+
+.search-results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.meal-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px; /* Set a fixed width for the container */
+    margin: 10px; /* Add margin for spacing */
+    border: 1px solid #ccc; /* Optional: Add a border */
+    padding: 10px; /* Optional: Add padding */
+    box-sizing: border-box; /* Include padding and border in the width and height */
+}
+
+.meal-item img {
+    width: 100%; /* Make the image take the full width of the container */
+    height: 150px; /* Set a fixed height */
+    object-fit: cover; /* Cover the area without distortion, cropping as needed */
+    border-radius: 8px; /* Optional: Rounded corners for the images */
+}
+
+.meal-info {
+    text-align: center;
+    width: 100%; /* Ensure the info section takes full width of the container */
+}
+
+.meal-info h3 {
+    margin: 10px 0;
+    font-size: 1.2em; /* Set a consistent font size */
+}
+
+.meal-info p {
+    margin: 0;
+    color: crimson; /* Adjust color to match your theme */
+}
+.black-label {
+    color: black;
+}
+
+.small-form {
+    max-width: 600px; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the form */
+    padding: 20px; /* Add some padding for aesthetics */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    background-color: #fff; /* Optional: Add a background color */
+    border-radius: 8px; /* Optional: Add rounded corners */
+}
+
+.small-form label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.small-form input,
+.small-form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.small-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: crimson; /* Adjust to match your design */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.small-form button:hover {
+    background-color: darkred; /* Adjust to match your design */
+}
+
+#vehicle-type,
+#parking-date,
+#search-meal-txt,
+#license-plate {
+    width: 80%; /* Adjust the width percentage or use a fixed width like 200px */
+    max-width: 300px; /* Set a maximum width if needed */
+    padding: 8px;
+    margin-bottom: 12px; /* Space below each input */
+    border: 1px solid #ddd; /* Border style */
+    border-radius: 4px; /* Rounded corners */
+}
+
+#footer-cont{
+    color: #333;
+}
+
+
+
+/* Overlay styling */
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+
+/* Logo styling */
+.logo {
+    max-width: 80%; /* Adjust size as needed */
+    height: auto;
+}
+
+.cont{
+    text-align: center;
+    ;
+}
